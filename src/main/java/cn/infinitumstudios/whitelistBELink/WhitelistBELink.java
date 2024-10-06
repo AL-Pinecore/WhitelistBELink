@@ -22,7 +22,15 @@ public final class WhitelistBELink extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
+        if (!getDataFolder().exists()){
+            if (!getDataFolder().mkdirs()){
+                getLogger().severe("Disabled due to failed to create plugin data folder!");
+                getServer().getPluginManager().disablePlugin(this);
+                return;
+            }
+        }
+
         try {
             dbmanager = new DatabaseManager(this, Reference.DATABASE_PATH.toString());
         } catch(SQLException e) {
@@ -41,6 +49,8 @@ public final class WhitelistBELink extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(playerJoinEventListener, this);
         Objects.requireNonNull(this.getCommand("wlink")).setExecutor(linkCommand);
+
+        getLogger().info("Plugin enabled successfully!");
     }
 
     @Override
