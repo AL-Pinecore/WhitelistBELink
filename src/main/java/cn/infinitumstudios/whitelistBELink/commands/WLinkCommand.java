@@ -30,7 +30,7 @@ public class WLinkCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         Player player = (Player) commandSender;
 
-        if (args.length < 3){
+        if (args.length < 2){
             commandSender.sendMessage(ChatColor.YELLOW + "该指令用法：/wlist bedrock|java 玩家游戏名称");
             return true;
         }
