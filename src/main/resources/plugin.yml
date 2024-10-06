@@ -1,0 +1,16 @@
+name: WhitelistBELink
+version: '1.0-SNAPSHOT'
+main: cn.infinitumstudios.whitelistBELink.WhitelistBELink
+api-version: '1.21'
+prefix: WhitelistLink
+load: STARTUP
+authors: [ ALPinecore ]
+description: Link Bedrock Edition account whitelist with your Java Edition account
+commands:
+  wlink:
+    description: Link your an account to your current account.
+    aliases: [ "wl" ]
+  clientedition:
+    description: Get the client edition type.
+    permission: infinitumess.commands.clientedition
+    aliases: [ "wl" ]
