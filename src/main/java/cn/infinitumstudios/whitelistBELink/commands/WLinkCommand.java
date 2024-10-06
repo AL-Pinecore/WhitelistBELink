@@ -34,6 +34,7 @@ public class WLinkCommand implements CommandExecutor, TabCompleter {
             commandSender.sendMessage(ChatColor.YELLOW + "该指令用法：/wlist bedrock|java 玩家游戏名称");
             return true;
         }
+
         switch(args[0]){
             case "bedrock":
                 if (!db.isWhitelistedName(args[1], Reference.BEDROCK_CLIENT)){
@@ -85,7 +86,7 @@ public class WLinkCommand implements CommandExecutor, TabCompleter {
                 }
                 break;
         }
-        return false;
+        return true;
     }
 
     @Override

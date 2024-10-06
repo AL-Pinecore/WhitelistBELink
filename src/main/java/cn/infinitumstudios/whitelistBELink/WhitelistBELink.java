@@ -31,6 +31,12 @@ public final class WhitelistBELink extends JavaPlugin {
             }
         }
 
+        if (!Bukkit.getServer().hasWhitelist()){
+            getLogger().severe("Disabled due to failed to whitelist is not enabled!");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         try {
             dbmanager = new DatabaseManager(this, Reference.DATABASE_PATH.toString());
         } catch(SQLException e) {
