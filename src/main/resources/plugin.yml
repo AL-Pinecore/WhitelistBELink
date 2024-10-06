@@ -10,7 +10,3 @@ commands:
   wlink:
     description: Link your an account to your current account.
     aliases: [ "wl" ]
-  clientedition:
-    description: Get the client edition type.
-    permission: infinitumess.commands.clientedition
-    aliases: [ "wl" ]
